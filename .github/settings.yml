@@ -1,0 +1,7 @@
+_extends: .github
+repository:
+  name: remark-remove-travis-ci-badge
+  description: remark plugin for removing a Travis CI badge
+  homepage: 'https://npm.im/@form8ion/remark-remove-travis-ci-badge'
+  private: false
+  topics: remark-plugin
