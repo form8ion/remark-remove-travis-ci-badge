@@ -31,13 +31,13 @@ remark plugin for removing a Travis CI badge
 ### Installation
 
 ```sh
-$ npm install @form8ion/remark-remove-travis-ci-badge --save-prod
+$ npm install remark-remove-travis-ci-badge --save-prod
 ```
 
 ### Example
 
 ```javascript
-import remarkRemoveTravisCiBadge from '@form8ion/remark-remove-travis-ci-badge';
+import remarkRemoveTravisCiBadge from 'remark-remove-travis-ci-badge';
 ```
 
 ## Contributing
@@ -97,10 +97,10 @@ $ npm test
 
 [license-badge]: https://img.shields.io/github/license/form8ion/remark-remove-travis-ci-badge.svg
 
-[npm-link]: https://www.npmjs.com/package/@form8ion/remark-remove-travis-ci-badge
+[npm-link]: https://www.npmjs.com/package/remark-remove-travis-ci-badge
 
-[npm-badge]: https://img.shields.io/npm/v/@form8ion/remark-remove-travis-ci-badge.svg
+[npm-badge]: https://img.shields.io/npm/v/remark-remove-travis-ci-badge.svg
 
-[runkit-link]: https://npm.runkit.com/@form8ion/remark-remove-travis-ci-badge
+[runkit-link]: https://npm.runkit.com/remark-remove-travis-ci-badge
 
-[runkit-badge]: https://badge.runkitcdn.com/@form8ion/remark-remove-travis-ci-badge.svg
+[runkit-badge]: https://badge.runkitcdn.com/remark-remove-travis-ci-badge.svg
