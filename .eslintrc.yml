@@ -1,6 +1,4 @@
 root: true
-parserOptions:
-  ecmaVersion: 2020
 extends:
   - '@form8ion'
   - '@form8ion/mocha'
