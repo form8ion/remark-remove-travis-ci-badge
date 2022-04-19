@@ -25,6 +25,7 @@ remark plugin for removing a Travis CI badge
 [![MIT license][license-badge]][license-link]
 [![npm][npm-badge]][npm-link]
 [![Try on RunKit][runkit-badge]][runkit-link]
+![node][node-badge]
 
 <!--consumer-badges end -->
 
@@ -104,3 +105,5 @@ $ npm test
 [runkit-link]: https://npm.runkit.com/remark-remove-travis-ci-badge
 
 [runkit-badge]: https://badge.runkitcdn.com/remark-remove-travis-ci-badge.svg
+
+[node-badge]: https://img.shields.io/node/v/remark-remove-travis-ci-badge?logo=node.js
