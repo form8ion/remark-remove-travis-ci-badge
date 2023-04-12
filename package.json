@@ -6,21 +6,17 @@
   "engines": {
     "node": ">=14.13.1"
   },
-  "files": [
-    "example.js",
-    "lib/"
+  "author": "Matt Travi <npm@travi.org> (https://matt.travi.org)",
+  "repository": "form8ion/remark-remove-travis-ci-badge",
+  "bugs": "https://github.com/form8ion/remark-remove-travis-ci-badge/issues",
+  "homepage": "https://npm.im/remark-remove-travis-ci-badge",
+  "keywords": [
+    "remark-plugin"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "runkitExampleFilename": "./example.js",
   "main": "lib/index.cjs.js",
   "module": "lib/index.es.js",
   "sideEffects": false,
-  "repository": "form8ion/remark-remove-travis-ci-badge",
-  "bugs": "https://github.com/form8ion/remark-remove-travis-ci-badge/issues",
-  "homepage": "https://npm.im/remark-remove-travis-ci-badge",
-  "author": "Matt Travi <npm@travi.org> (https://matt.travi.org)",
   "scripts": {
     "test": "npm-run-all --print-label build --parallel lint:* --parallel test:*",
     "lint:lockfile": "lockfile-lint",
@@ -50,9 +46,18 @@
     "prepare": "husky install",
     "lint:engines": "ls-engines"
   },
-  "keywords": [
-    "remark-plugin"
+  "files": [
+    "example.js",
+    "lib/"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "mdast-util-definitions": "^4.0.0",
+    "unist-util-remove": "^2.0.1",
+    "unist-util-visit": "^2.0.3"
+  },
   "devDependencies": {
     "@babel/register": "7.21.0",
     "@cucumber/cucumber": "9.1.0",
@@ -85,10 +90,5 @@
     "rollup-plugin-auto-external": "2.0.0",
     "rollup-plugin-babel": "4.4.0",
     "sinon": "15.0.3"
-  },
-  "dependencies": {
-    "mdast-util-definitions": "^4.0.0",
-    "unist-util-remove": "^2.0.1",
-    "unist-util-visit": "^2.0.3"
   }
 }
