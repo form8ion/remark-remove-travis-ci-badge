@@ -18,8 +18,8 @@ jobs:
     strategy:
       matrix:
         node:
-          - 14.13.1
-          - 16
+          - 16.14.0
+          - 18.0.0
           - 18
           - 19
     steps:
@@ -27,8 +27,8 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
-          node-version: ${{ matrix.node }}
           cache: npm
+          node-version: ${{ matrix.node }}
       - run: npm clean-install
       - run: npm test
   verify:
