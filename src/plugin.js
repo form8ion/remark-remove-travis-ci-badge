@@ -1,8 +1,9 @@
-import remove from '../thirdparty-wrappers/unist-util-remove';
-import visit from '../thirdparty-wrappers/unist-util-visit';
-import createBadgePredicate from './badge-predicate';
-import createReferencedBadgePredicate from './referenced-badge-predicate';
-import mergeNewlines from './merge-newlines-in-paragraph';
+import {remove} from 'unist-util-remove';
+import {visit} from 'unist-util-visit';
+
+import createBadgePredicate from './badge-predicate.js';
+import createReferencedBadgePredicate from './referenced-badge-predicate.js';
+import mergeNewlines from './merge-newlines-in-paragraph.js';
 
 export default function () {
   return function transformer(tree) {
