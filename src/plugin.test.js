@@ -1,18 +1,19 @@
+import {remove} from 'unist-util-remove';
+import {visit} from 'unist-util-visit';
+
 import {afterEach, describe, expect, it, vi} from 'vitest';
 import any from '@travi/any';
 import {when} from 'jest-when';
 
-import * as remove from '../thirdparty-wrappers/unist-util-remove';
-import * as visit from '../thirdparty-wrappers/unist-util-visit';
-import mergeNewlines from './merge-newlines-in-paragraph';
-import * as badgePredicateFactory from './badge-predicate';
-import * as referencedBadgePredicateFactory from './referenced-badge-predicate';
-import plugin from './plugin';
+import mergeNewlines from './merge-newlines-in-paragraph.js';
+import * as badgePredicateFactory from './badge-predicate.js';
+import * as referencedBadgePredicateFactory from './referenced-badge-predicate.js';
+import plugin from './plugin.js';
 
-vi.mock('../thirdparty-wrappers/unist-util-remove');
+vi.mock('unist-util-remove');
+vi.mock('unist-util-visit');
 vi.mock('./badge-predicate');
 vi.mock('./referenced-badge-predicate');
-vi.mock('../thirdparty-wrappers/unist-util-visit');
 
 describe('plugin', () => {
   afterEach(() => {
@@ -28,10 +29,10 @@ describe('plugin', () => {
 
     plugin()(tree);
 
-    expect(remove.default).toHaveBeenCalledWith(tree, {type: 'definition', identifier: 'ci-badge'});
-    expect(remove.default).toHaveBeenCalledWith(tree, {type: 'definition', identifier: 'ci-link'});
-    expect(remove.default).toHaveBeenCalledWith(tree, badgePredicate);
-    expect(remove.default).toHaveBeenCalledWith(tree, referencedBadgePredicate);
-    expect(visit.default).toHaveBeenCalledWith(tree, {type: 'text', value: '\n'}, mergeNewlines);
+    expect(remove).toHaveBeenCalledWith(tree, {type: 'definition', identifier: 'ci-badge'});
+    expect(remove).toHaveBeenCalledWith(tree, {type: 'definition', identifier: 'ci-link'});
+    expect(remove).toHaveBeenCalledWith(tree, badgePredicate);
+    expect(remove).toHaveBeenCalledWith(tree, referencedBadgePredicate);
+    expect(visit).toHaveBeenCalledWith(tree, {type: 'text', value: '\n'}, mergeNewlines);
   });
 });

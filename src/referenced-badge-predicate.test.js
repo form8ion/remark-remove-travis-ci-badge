@@ -1,11 +1,12 @@
+import {definitions} from 'mdast-util-definitions';
+
 import {afterEach, describe, expect, it, vi} from 'vitest';
 import any from '@travi/any';
 import {when} from 'jest-when';
 
-import * as definitions from '../thirdparty-wrappers/mdast-util-definitions';
-import createReferencedBadgePredicate from './referenced-badge-predicate';
+import createReferencedBadgePredicate from './referenced-badge-predicate.js';
 
-vi.mock('../thirdparty-wrappers/mdast-util-definitions');
+vi.mock('mdast-util-definitions');
 
 describe('badge with referenced definitions', () => {
   const tree = any.simpleObject();
@@ -21,7 +22,7 @@ describe('badge with referenced definitions', () => {
 
   it('should return `false` if the `linkReference` is not the travis badge', () => {
     const getDefinitionByIdentifier = vi.fn();
-    when(definitions.default).calledWith(tree).mockReturnValue(getDefinitionByIdentifier);
+    when(definitions).calledWith(tree).mockReturnValue(getDefinitionByIdentifier);
     when(getDefinitionByIdentifier).calledWith(nodeIdentifier).mockReturnValue(any.simpleObject());
 
     expect(createReferencedBadgePredicate(tree)({
@@ -33,7 +34,7 @@ describe('badge with referenced definitions', () => {
 
   it('should return `true` when the `linkReference` is the travis badge', () => {
     const getDefinitionByIdentifier = vi.fn();
-    when(definitions.default).calledWith(tree).mockReturnValue(getDefinitionByIdentifier);
+    when(definitions).calledWith(tree).mockReturnValue(getDefinitionByIdentifier);
     when(getDefinitionByIdentifier)
       .calledWith(nodeIdentifier)
       .mockReturnValue({...any.simpleObject(), url: `https://travis-ci.com/${any.word}/${any.word}`});

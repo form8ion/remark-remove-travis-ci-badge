@@ -1,4 +1,4 @@
-import definitions from '../thirdparty-wrappers/mdast-util-definitions';
+import {definitions} from 'mdast-util-definitions';
 
 export default function (tree) {
   const getDefinitionByIdentifier = definitions(tree);

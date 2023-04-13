@@ -1,7 +1,7 @@
 import {describe, expect, it} from 'vitest';
 import any from '@travi/any';
 
-import createBadgePredicate from './badge-predicate';
+import createBadgePredicate from './badge-predicate.js';
 
 describe('badge predicate', () => {
   const tree = any.simpleObject();
